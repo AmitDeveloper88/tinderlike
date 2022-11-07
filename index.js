@@ -3,8 +3,9 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
 const app = express()
-const PORT = 3000
-const {mogoUrl} = require('./keys')
+//const PORT = 3000
+const { mogoUrl } = require('./keys')
+const port = process.env.PORT || 8003;
 
 
 require('./models/User');
@@ -39,6 +40,6 @@ app.get('/',(req,res)=>{
     res.send("<H1> Hello from TinderLike </H1>")
 })
 
-app.listen(PORT,()=>{
-    console.log("server running "+PORT)
+app.listen(port,()=>{
+    console.log("server running "+port)
 })
